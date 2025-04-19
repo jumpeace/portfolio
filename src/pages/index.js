@@ -37,8 +37,10 @@ export default function Home() {
     return (
         <main className="mt-12 md:mt-20">
             <Hero/>
+            {/* <Summary /> */}
             <SkillGenre skillGenre={certificationAwardGenre} />
             <SkillGenre skillGenre={itSkillGenre} />
+            {/* <History /> */}
             <Footer/>
             <NavBar />
         </main>

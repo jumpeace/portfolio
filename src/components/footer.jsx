@@ -8,7 +8,7 @@ export default function Footer() {
     
     return (
         <div 
-            className="pt-4 md:pt-6 lg:pt-8 pb-2 md:pb-3 lg:pb-4 flex justify-center items-center z-10 bg-[#D4DFE0]"
+            className="pt-4 md:pt-6 lg:pt-8 pb-2 md:pb-3 lg:pb-4 flex justify-center items-center z-10 bg-gray-200"
         >
             <div 
                 className="flex flex-col gap-y-2 lg:gap-y-4 justify-center"

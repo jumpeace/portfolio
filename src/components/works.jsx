@@ -14,20 +14,20 @@ export default function Works({works}) {
                         {/* 文章部分 */}
                         <div className="m-5 flex-1 flex flex-col">
                             {/* 見出し */}
-                            <div className="text-base md:text-xl text-gray-700">{work.title}</div>
+                            <div className="text-base md:text-xl text-gray-900">{work.title}</div>
                             {/* 日付 */}
-                            <div className="flex-initial mt-1 text-xs md:text-sm text-gray-400 text-right">
+                            <div className="flex-initial mt-1 text-xs md:text-sm text-gray-500 text-right">
                                 {work.date}
                             </div>
 
                             {/* 簡単な説明 */}
-                            <div className="h-16 md:h-24 mt-2 md:mt-3 tracking-wide text-black text-xs md:text-base font-light">{work.description}</div>
+                            <div className="h-16 md:h-24 mt-2 md:mt-3 tracking-wide text-gray-900 text-xs md:text-base font-light">{work.description}</div>
 
                             {/* リンク */}
                             {work?.link && (
                                 <div className="ml-auto">
                                     <a href={work.link.uri} target="_blank" rel="noreferrer"
-                                        className="px-2 md:px-3 py-1 md:py-[6px] tracking-wide rounded-lg text-xs md:text-base no-underline text-black font-light bg-gray-200 hover:text-gray-400"
+                                        className="px-2 md:px-3 py-1 md:py-[7px] tracking-wide rounded-lg text-xs md:text-base no-underline text-gray-900 font-light bg-gray-200 hover:text-gray-500"
                                     >
                                         {work.link.title}
                                     </a>
