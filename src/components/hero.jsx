@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function Title() {
+export default function Hero() {
     return (
         <div className="h-screen w-screen flex justify-center items-center">
             <div 
@@ -18,5 +18,5 @@ export default function Title() {
                 <Image src={`/hero.JPG`} alt="hero image for top page" layout={`fill`} objectFit={`cover`} />
             </div>
         </div>
-        )
-    }
+    );
+}
