@@ -37,8 +37,8 @@ export default function Home() {
     return (
         <main>
             <Hero/>
-            <SkillGenre prop={certificationAwardGenre} />
-            <SkillGenre prop={itSkillGenre} />
+            <SkillGenre skillGenre={certificationAwardGenre} />
+            <SkillGenre skillGenre={itSkillGenre} />
             <Footer/>
             <NavBar />
         </main>

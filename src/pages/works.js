@@ -34,7 +34,7 @@ export default function Home() {
             link: {title: '公式サイト 開催報告', uri: 'https://webiotmakers.github.io/2020/shinshu/'},
         },
     ]);
-    
+
     return (
         <main className="my-10">
             <Works works={works}/>
