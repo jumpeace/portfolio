@@ -8,7 +8,7 @@ import { faCss3, faJs, faPython } from "@fortawesome/free-brands-svg-icons";
 export default function Skills() {
     const [skillGenres] = useState([
         {
-            title: 'CERTIFICATIONS',
+            title: '資格・受賞歴',
             icon: faIdBadge,
             bgColor: 'white',
             skills: [
@@ -17,7 +17,7 @@ export default function Skills() {
             ]
         },
         {
-            title: 'IT SKILLS',
+            title: 'ITスキル',
             icon: faCode,
             bgColor: 'gray-50',
             skills: [
