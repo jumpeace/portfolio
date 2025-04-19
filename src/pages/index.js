@@ -1,9 +1,9 @@
 import { useState } from "react"
 
 import Hero from '@/components/hero.jsx';
+import SkillGenre from '@/components/skillGenre';
 import Footer from '@/components/footer.jsx';
 import NavBar from '@/components/navBar';
-import Skills from '@/components/skills';
 
 import { faCode, faDatabase, faGem, faIdBadge, faLanguage, faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { faIdCard } from "@fortawesome/free-regular-svg-icons";
@@ -37,8 +37,8 @@ export default function Home() {
     return (
         <main>
             <Hero/>
-            <Skills skillGenre={certificationAwardGenre} />
-            <Skills skillGenre={itSkillGenre} />
+            <SkillGenre prop={certificationAwardGenre} />
+            <SkillGenre prop={itSkillGenre} />
             <Footer/>
             <NavBar />
         </main>
