@@ -7,12 +7,8 @@ import Head from 'next/head';
 
 export default function Home() {
   return (
-    <main>
-      <Head>
-        <title>Jumpei Kawahara</title>
-      </Head>
-      <Title/>
-      <Skills />
+    <main className="my-10">
+      <Works/>
       <Footer/>
       <NavBar />
     </main>

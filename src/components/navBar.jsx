@@ -5,6 +5,7 @@ export default function NavBar() {
     const router = useRouter();
     const [links] = useState([
         {uri: '/', title: 'Top'},
+        {uri: '/works', title: 'Works'},
     ])
     const [isPrintMobileMenu, togglePrintMobileMenu] = useReducer(
         (state, _) => state=!state, false)
