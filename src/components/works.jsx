@@ -6,15 +6,15 @@ export default function Works({works}) {
             <div className="flex-1"></div>
             <div className="flex-initial mx-16 max-w-[1600px] flex flex-wrap gap-6 md:gap-8">
                 {works.map(work => 
-                    <div key={work.title} className="w-[272px] h-[330px] md:w-[304px] md:h-[400px] flex flex-col bg-gray-50 rounded-3xl shadow-xl">
+                    <div key={work.title} className="w-[174px] h-[260px] md:w-[304px] md:h-[400px] flex flex-col bg-gray-50 rounded-3xl shadow-xl">
                         <Image src={`${work.imgPath}`} alt={work.title} width={304} height={171}
-                            className="w-[272px] h-[153px] md:w-[304px] md:h-[171px] flex-inline mx-auto rounded-t-3xl object-cover"
+                            className="w-[174px] h-[98px] md:w-[304px] md:h-[171px] flex-inline mx-auto rounded-t-3xl object-cover"
                         />
 
                         {/* 文章部分 */}
-                        <div className="m-5 flex-1 flex flex-col">
+                        <div className="m-3 md:m-5 flex-1 flex flex-col">
                             {/* 見出し */}
-                            <div className="text-base md:text-xl text-gray-900">{work.title}</div>
+                            <div className="text-sm md:text-xl text-gray-900">{work.title}</div>
                             {/* 日付 */}
                             <div className="flex-initial mt-1 text-xs md:text-sm text-gray-500 text-right">
                                 {work.date}
