@@ -36,7 +36,7 @@ export default function Home() {
     ]);
 
     return (
-        <main className="my-10">
+        <main className="mt-12 md:mt-20">
             <Works works={works}/>
             <Footer/>
             <NavBar />

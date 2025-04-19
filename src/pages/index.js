@@ -35,7 +35,7 @@ export default function Home() {
     });
 
     return (
-        <main>
+        <main className="mt-12 md:mt-20">
             <Hero/>
             <SkillGenre skillGenre={certificationAwardGenre} />
             <SkillGenre skillGenre={itSkillGenre} />
