@@ -16,14 +16,12 @@ export default function Footer() {
                 <div className="flex justify-center gap-x-6 md:gap-x-8 lg:gap-x-10">
                     {socials.map(social => (
                         <a key={social.name} href={social.uri} className="cursor-pointer rounded-full" target="_blank">
-                            <Image src={social.imgPath} alt={social.name} width={36} height={36} className="hidden md:block lg:hidden border-none rounded-full"/>
-                            <Image src={social.imgPath} alt={social.name} width={30} height={30} className="md:hidden border-none rounded-full"/>
-                            <Image src={social.imgPath} alt={social.name} width={48} height={48} className="hidden lg:block border-none rounded-full"/>
+                            <Image src={social.imgPath} alt={social.name} width={48} height={48} className="w-[30px] h-[30px] md:w-[48px] md:h-[48px] border-none rounded-full"/>
                         </a>
                     ))}
                 </div>
                 <div className="flex justify-center">
-                    <div className="text-sm md:text-lg lg:text-xl text-[#405658]">© 2023, Jumpei Kawahara</div>
+                    <div className="text-sm md:text-lg lg:text-xl text-[#405658]">© 2023-25, Jumpei Kawahara</div>
                 </div>
             </div>
         </div>
