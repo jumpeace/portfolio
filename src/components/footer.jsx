@@ -4,7 +4,8 @@ import {useState} from "react"
 export default function Footer() {
     const [socials] = useState([
         {name: 'GitHub', uri: 'https://github.com/jumpeace/', imgPath: '/github.svg'}
-    ])
+    ]);
+    
     return (
         <div 
             className="pt-4 md:pt-6 lg:pt-8 pb-2 md:pb-3 lg:pb-4 flex justify-center items-center z-10 bg-[#D4DFE0]"
@@ -26,5 +27,5 @@ export default function Footer() {
                 </div>
             </div>
         </div>
-        )
-    }
+    );
+}

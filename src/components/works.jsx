@@ -46,5 +46,5 @@ export default function Works({works}) {
             </div>
             <div className="flex-1"></div>
         </div>
-        )
-    }
+    );
+}
