@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 export default function NavBar() {
     const router = useRouter();
     const [links] = useState([
-        {uri: '/', title: 'Top'},
+        {uri: '/', title: 'Home'},
         {uri: '/works', title: 'Works'},
     ]);
 
