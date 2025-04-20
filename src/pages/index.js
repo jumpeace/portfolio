@@ -13,6 +13,12 @@ import { faCss3, faGitAlt, faJs, faPython } from "@fortawesome/free-brands-svg-i
 
 // ホームのページ（プロフィール概要、スキルを表示）
 export default function Home() {
+    const [hero] = useState({link: 'hero.png'});
+    const [title] = useState({
+        icon: {link: 'icon.jpg', alt: 'icon image'},
+        title: 'Jumpei Kawahara',
+        subTitle: 'Computer Science College Student'
+    });
     const [summaryItems] = useState([
         {
             key: 'school',
@@ -71,7 +77,7 @@ export default function Home() {
 
     return (
         <main className="pt-12 md:pt-20">
-            <Hero/>
+            <Hero hero={hero} title={title} />
             <Summary summaryItems={summaryItems} />
             <SkillGenre skillGenre={certificationAwardGenre} />
             <SkillGenre skillGenre={itSkillGenre} />
