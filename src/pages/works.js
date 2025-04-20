@@ -1,10 +1,11 @@
 import {useState} from "react"
 
-import Works from '@/components/pages/works/works.jsx';
+import WorksComponent from '@/components/pages/works/works.jsx';
 import Footer from '@/components/common/footer.jsx';
 import NavBar from '@/components/common/navBar';
 
-export default function Home() {
+// 作品群を表示するページ
+export default function Works() {
     const [works] = useState([
         {
             title: '農工大 卒業研究',
@@ -64,7 +65,7 @@ export default function Home() {
 
     return (
         <main className="mt-12 md:mt-20">
-            <Works works={works}/>
+            <WorksComponent works={works}/>
             <Footer/>
             <NavBar />
         </main>

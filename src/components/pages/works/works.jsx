@@ -1,12 +1,15 @@
 import Image from "next/image"
 
+// 作品群を表示するコンポーネント
 export default function Works({works}) {
     return (
         <div className="flex py-8 md:py-12 bg-gray-50">
             <div className="flex-1"></div>
             <div className="flex-initial mx-8 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 md:gap-y-8">
+                {/* 作品群のループ */}
                 {works.map(work => 
                     <div key={work.title} className="w-[174px] h-[260px] md:w-[304px] md:h-[400px] flex flex-col bg-gray-50 rounded-3xl shadow-xl">
+                        {/* ヒーロー画像 */}
                         <Image src={`/works_images/${work.imgPath}`} alt={work.title} width={304} height={171}
                             className="w-[174px] h-[98px] md:w-[304px] md:h-[171px] flex-inline mx-auto rounded-t-3xl object-cover"
                         />

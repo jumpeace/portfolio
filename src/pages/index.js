@@ -11,6 +11,7 @@ import { faSchool, faBook, faGraduationCap, faFlaskVial, faHandshakeAngle } from
 import { faIdCard } from "@fortawesome/free-regular-svg-icons";
 import { faCss3, faGitAlt, faJs, faPython } from "@fortawesome/free-brands-svg-icons";
 
+// ホームのページ（プロフィール概要、スキルを表示）
 export default function Home() {
     const [summaryItems] = useState([
         {
