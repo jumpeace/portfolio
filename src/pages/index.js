@@ -76,7 +76,7 @@ export default function Home() {
     });
 
     return (
-        <main className="pt-12 md:pt-20">
+        <main className="pt-12 md:pt-16">
             <Hero hero={hero} title={title} />
             <Summary summaryItems={summaryItems} />
             <SkillGenre skillGenre={certificationAwardGenre} />
