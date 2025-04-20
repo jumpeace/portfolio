@@ -1,19 +1,53 @@
 import { useState } from "react"
 
 import Hero from '@/components/hero.jsx';
+import Summary from "@/components/summary";
 import SkillGenre from '@/components/skillGenre';
 import Footer from '@/components/footer.jsx';
 import NavBar from '@/components/navBar';
 
 import { faCode, faDatabase, faGem, faIdBadge, faLanguage, faTrophy } from "@fortawesome/free-solid-svg-icons";
+import { faSchool, faBook, faGraduationCap, faFlaskVial, faHandshakeAngle } from "@fortawesome/free-solid-svg-icons";
 import { faIdCard } from "@fortawesome/free-regular-svg-icons";
 import { faCss3, faGitAlt, faJs, faPython } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
+    const [summaryItems] = useState([
+        {
+            key: 'school',
+            title: '学校', 
+            icon: faSchool,
+            value: '東京農工大学大学院',
+        },
+        {
+            key: 'department',
+            title: '所属', 
+            icon: faBook,
+            value: '工学府 知能情報システム工学専攻',
+        },
+        {
+            key: 'grade',
+            title: '学年', 
+            icon: faGraduationCap,
+            value: '修士課程 1年',
+        },
+        {
+            key: 'laboratory',
+            title: '研究室',
+            icon: faFlaskVial,
+            value: '藤田桂英研究室',
+        },
+        {
+            key: 'volunteer',
+            title: '学生ボランティア',
+            icon: faHandshakeAngle,
+            value: 'IAESTE JAPAN 関東地区学生委員 総務部門統括',
+        },
+    ]);
     const [certificationAwardGenre] = useState({
         title: '資格・受賞歴',
         icon: faIdBadge,
-        bgColor: 'white',
+        bgColor: 'gray-50',
         skills: [
             {icon: faLanguage, title: 'TOEIC L&Rテスト 845点'},
             {icon: faTrophy, title: 'Hack U Kosen 2022 最優秀賞'},
@@ -23,7 +57,7 @@ export default function Home() {
     const [itSkillGenre] = useState({
         title: 'ITスキル',
         icon: faCode,
-        bgColor: 'gray-50',
+        bgColor: 'white',
         skills: [
             {icon: faPython, title: 'Python', details: 'MARL, PyTorch, Django'},
             {icon: faJs, title: 'JavaScript', details: 'React, Next.js, p5.js'},
@@ -35,12 +69,11 @@ export default function Home() {
     });
 
     return (
-        <main className="mt-12 md:mt-20">
+        <main className="pt-12 md:pt-20">
             <Hero/>
-            {/* <Summary /> */}
+            <Summary summaryItems={summaryItems} />
             <SkillGenre skillGenre={certificationAwardGenre} />
             <SkillGenre skillGenre={itSkillGenre} />
-            {/* <History /> */}
             <Footer/>
             <NavBar />
         </main>
