@@ -9,7 +9,7 @@ export default function SkillGenre({skillGenre}) {
                     <FontAwesomeIcon icon={skillGenre.icon} className="text-gray-900 text-2xl md:text-4xl" />
                     <div className="text-gray-900 text-xl md:text-3xl tracking-wider font-light">{skillGenre.title}</div>
                 </div>
-                <div className="mx-16 max-w-[1156px] flex flex-wrap gap-x-2 gap-y-2 md:gap-y-4">
+                <div className="mx-16 grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-2 gap-y-2 md:gap-y-4">
                     {skillGenre.skills.map((skill) => (
                         <div key={skill.title} className="flex flex-col gap-y-1 md:gap-y-2 items-center px-2">
                             <FontAwesomeIcon icon={skill.icon} className="w-[48px] h-[48px] md:w-[80px] md:h-[80px] text-gray-600" />
