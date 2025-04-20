@@ -1,10 +1,10 @@
 import { useState } from "react"
 
-import Hero from '@/components/hero.jsx';
-import Summary from "@/components/summary";
-import SkillGenre from '@/components/skillGenre';
-import Footer from '@/components/footer.jsx';
-import NavBar from '@/components/navBar';
+import Hero from '@/components/pages/index/hero.jsx';
+import Summary from "@/components/pages/index/summary";
+import SkillGenre from '@/components/pages/index/skillGenre';
+import Footer from '@/components/common/footer.jsx';
+import NavBar from '@/components/common/navBar';
 
 import { faCode, faDatabase, faGem, faIdBadge, faLanguage, faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { faSchool, faBook, faGraduationCap, faFlaskVial, faHandshakeAngle } from "@fortawesome/free-solid-svg-icons";

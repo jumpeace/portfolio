@@ -7,7 +7,7 @@ export default function Works({works}) {
             <div className="flex-initial mx-8 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 md:gap-y-8">
                 {works.map(work => 
                     <div key={work.title} className="w-[174px] h-[260px] md:w-[304px] md:h-[400px] flex flex-col bg-gray-50 rounded-3xl shadow-xl">
-                        <Image src={`${work.imgPath}`} alt={work.title} width={304} height={171}
+                        <Image src={`/works_images/${work.imgPath}`} alt={work.title} width={304} height={171}
                             className="w-[174px] h-[98px] md:w-[304px] md:h-[171px] flex-inline mx-auto rounded-t-3xl object-cover"
                         />
 
