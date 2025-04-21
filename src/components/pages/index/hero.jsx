@@ -3,7 +3,10 @@ import Image from "next/image"
 // ヒーロー画像とタイトルを表示するコンポーネント
 export default function Hero({hero, title}) {
     return (
-        <div className={`bg-[url(/${hero.link})] bg-cover bg-center h-[180px] md:h-[240px] flex justify-center items-center gap-x-3 md:gap-x-5`}>
+        <div 
+            style={{background: `url(/${hero.link}) no-repeat`, backgroundPosition: "center", backgroundSize: "cover"}}
+            className={`h-[180px] md:h-[240px] flex justify-center items-center gap-x-3 md:gap-x-5`}
+        >
             {/* ↑ヒーロー画像は背景画像として読み込む */}
             {/* タイトルのアイコン画像 */}
             <Image src={`/${title.icon.link}`} alt={title.icon.alt} width={80} height={80} className="w-[60px] md:w-[100px] h-[60px] md:h-[100px] rounded-full" />
