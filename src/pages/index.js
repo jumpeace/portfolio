@@ -48,7 +48,7 @@ export default function Home() {
             key: 'volunteer',
             title: '学生ボランティア',
             icon: faHandshakeAngle,
-            value: 'IAESTE JAPAN 関東地区学生委員 総務部門統括',
+            value: 'IAESTE TLSC 総務部門統括',
         },
     ]);
     const [certificationAwardGenre] = useState({
@@ -76,7 +76,7 @@ export default function Home() {
     });
 
     return (
-        <main className="pt-12 md:pt-16">
+        <main className="pt-12 md:pt-14">
             <Hero hero={hero} title={title} />
             <Summary summaryItems={summaryItems} />
             <SkillGenre skillGenre={certificationAwardGenre} />

@@ -9,7 +9,7 @@ export default function NavBar() {
     ]);
 
     return (<div className="fixed top-0 left-0 w-full z-10 bg-white shadow-lg">
-            <div className="flex justify-center gap-x-6 md:gap-x-8 h-12 md:h-16 tracking-widest items-center text-xl md:text-3xl">
+            <div className="flex justify-center gap-x-6 h-12 md:h-14 tracking-widest items-center text-xl">
                 {links.map(link => (
                     <div key={link.title}>
                         {link.uri == router.pathname ? 

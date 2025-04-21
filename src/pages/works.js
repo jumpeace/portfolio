@@ -57,7 +57,7 @@ export default function Works() {
     ]);
 
     return (
-        <main className="mt-12 md:mt-16">
+        <main className="mt-12 md:pt-14">
             <WorksComponent works={works}/>
             <Footer/>
             <NavBar />
