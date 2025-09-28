@@ -1,29 +1,35 @@
-import Image from "next/image"
-import {useState} from "react"
+import Image from "next/image";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons"; // GitHubアイコンをインポート
 
 export default function Footer() {
     const [socials] = useState([
-        {name: 'GitHub', uri: 'https://github.com/jumpeace/', imgPath: '/github.svg'}
+        { name: 'GitHub', uri: 'https://github.com/jumpeace/', icon: faGithub }
     ]);
-    
+
     return (
-        <div 
-            className="pt-4 md:pt-6 lg:pt-8 pb-2 md:pb-3 lg:pb-4 flex justify-center items-center z-10 bg-gray-200"
-        >
-            <div 
-                className="flex flex-col gap-y-2 lg:gap-y-4 justify-center"
-            >
-                <div className="flex justify-center gap-x-6 md:gap-x-8 lg:gap-x-10">
+        <footer className="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+            <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-y-8">
+                {/* ソーシャルメディアアイコン */}
+                <div className="flex justify-center gap-x-8 md:gap-x-12">
                     {socials.map(social => (
-                        <a key={social.name} href={social.uri} className="cursor-pointer rounded-full" target="_blank">
-                            <Image src={social.imgPath} alt={social.name} width={48} height={48} className="w-[30px] h-[30px] md:w-[48px] md:h-[48px] border-none rounded-full"/>
+                        <a 
+                            key={social.name} 
+                            href={social.uri} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-white transition-all duration-300 transform"
+                        >
+                            <FontAwesomeIcon icon={social.icon} className="w-10 h-10 md:w-12 md:h-12" />
                         </a>
                     ))}
                 </div>
-                <div className="flex justify-center">
-                    <div className="text-sm md:text-lg lg:text-xl text-[#405658]">© 2023-25, Jumpei Kawahara</div>
+                {/* 著作権表示 */}
+                <div className="text-sm md:text-base text-gray-400 tracking-wide">
+                    © 2023-25, Jumpei Kawahara
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }
