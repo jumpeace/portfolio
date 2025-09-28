@@ -1,7 +1,9 @@
+import Head from 'next/head';
+
 import HomeTemplate from '@/components/template';
 
 import summary from "@/data/summary";
-import metadata from "@/data/metadata";
+import metadata from "@/data/header";
 import timeline from '@/data/timeline';
 import skills from '@/data/skills';
 

@@ -1,11 +1,11 @@
+import Head from 'next/head';
+
 import React from 'react';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import fs from 'fs'; // Node.jsのファイルシステムモジュール
 import path from 'path'; // Node.jsのパスモジュール
 import matter from 'gray-matter'; // Markdownのフロントマターを解析
-import { remark } from 'remark'; // Markdownを処理
-import html from 'remark-html'; // remarkでHTMLに変換
 
 // 記事のルートディレクトリを定義
 const postsDirectory = path.join(process.cwd(), 'posts'); 
