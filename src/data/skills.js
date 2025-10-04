@@ -6,6 +6,8 @@ const skills = {
         { "name": "JavaScript / TypeScript", "icon": faJs },
         { "name": "Python", "icon": faPython },
         { "name": "Ruby", "icon": faGem },
+        { "name": "C++", "icon": faC },
+        { "name": "C", "icon": faC },
     ],
     "Web Frameworks": [
         { "name": "Next.js", "icon": faJs },
