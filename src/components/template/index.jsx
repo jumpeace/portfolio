@@ -36,7 +36,7 @@ export default function HomeTemplate({metadata, summary, skills, timeline}) {
             </header>
 
             {/* 概要セクション - カードデザインで情報を視覚的に整理 */}
-            <section className="bg-white py-20 md:py-28">
+            <section id="summary" className="bg-white py-20 md:py-28">
                 <div className="max-w-4xl mx-auto px-6 md:px-4"> {/* px-4をpx-6に変更 */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         {summary.map((summaryItem) => (
@@ -61,7 +61,7 @@ export default function HomeTemplate({metadata, summary, skills, timeline}) {
             </section>
             
             {/* スキルセクション */}
-            <section className="bg-gray-100 py-20 md:py-28">
+            <section id="skills" className="bg-gray-100 py-20 md:py-28">
                 <div className="max-w-4xl mx-auto px-6 md:px-4"> {/* px-4をpx-6に変更 */}
                     <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-800 mb-12">
                         SKILLS
@@ -88,12 +88,12 @@ export default function HomeTemplate({metadata, summary, skills, timeline}) {
 
 
             {/* タイムラインセクション - 視覚的に魅力的なデザイン */}
-            <section className="bg-white py-20 md:py-28">
-            <div className="max-w-4xl mx-auto px-6">
-                <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-800 mb-12">
-                    TIMELINE
-                </h2>
-                <div className="relative border-l-4 border-gray-500 ml-4 md:ml-12">
+            <section id="timeline" className="bg-white py-20 md:py-28">
+                <div className="max-w-4xl mx-auto px-6">
+                    <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-800 mb-12">
+                        TIMELINE
+                    </h2>
+                    <div className="relative border-l-4 border-gray-500 ml-4 md:ml-12">
                     {timeline.map((item, index) => (
                         <div key={index} className="mb-8 md:mb-10 pl-8 md:pl-12 relative last:mb-0">
                             <div className="absolute left-0 top-0 mt-3 -ml-2.5 w-5 h-5 bg-gray-500 rounded-full border-4 border-white"></div>

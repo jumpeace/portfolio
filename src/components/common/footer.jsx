@@ -1,13 +1,6 @@
-import Image from "next/image";
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons"; // GitHubアイコンをインポート
 
-export default function Footer() {
-    const [socials] = useState([
-        { name: 'GitHub', uri: 'https://github.com/jumpeace/', icon: faGithub }
-    ]);
-
+export default function Footer({socials}) {
     return (
         <footer className="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
             <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-y-8">

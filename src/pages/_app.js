@@ -5,6 +5,8 @@ import '@/styles/globals.css'
 import Footer from '@/components/common/footer';
 import NavBar from '@/components/common/navBar';
 
+import socials from "@/data/socials";
+
 export default function App({ Component, pageProps }) {
     return (
         <>
@@ -23,7 +25,7 @@ export default function App({ Component, pageProps }) {
             <Component {...pageProps} />
             
             {/* フッター */}
-            <Footer />
+            <Footer socials={socials} />
         </>
     );
 }

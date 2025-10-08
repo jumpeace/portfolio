@@ -1,5 +1,5 @@
-import { faDatabase, faGem, faScrewdriverWrench, faLaptopCode, faCloud, faC, faRobot, faEarth, faEdit, faCode } from "@fortawesome/free-solid-svg-icons";
-import { faJs, faPython, faReact, faGitAlt, faNodeJs, faDocker } from "@fortawesome/free-brands-svg-icons";
+import { faDatabase, faGem, faCloud, faC, faRobot, faEarth, faEdit, faCode } from "@fortawesome/free-solid-svg-icons";
+import { faJs, faPython, faReact, faGitAlt, faDocker } from "@fortawesome/free-brands-svg-icons";
 
 const skills = {
     "Programming Languages": [
