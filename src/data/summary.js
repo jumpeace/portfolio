@@ -29,7 +29,7 @@ const summary = [
         key: 'volunteer',
         title: 'Volunteer',
         icon: faHandshakeAngle,
-        value: 'IAESTE TLSC\n(元総務部門統括)',
+        value: 'IAESTE TLSC\n(元幹部)',
     },
     {
         key: 'english',

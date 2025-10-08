@@ -5,8 +5,8 @@ const timeline = [
         "description": "IAESTEを使って、2~3ヶ月ほど欧米でインターンをしようと考えています（現在選考中）。",
         "links": [
             {
-                "title": "IAESTEホームページ", 
-                "uri": "https://iaeste.org/"
+                "title": "IAESTEインターンについて", 
+                "uri": "https://iaeste.org/about"
             }
         ]
     },
@@ -122,10 +122,6 @@ const timeline = [
                 "uri": "https://www.youtube.com/watch?v=VIwtxB-X24k&t=3430s"
             },
         ]
-    },
-    {
-        "date": "2022.07",
-        "title": "普通自動車第一種運転免許（AT限定）を取得",
     },
     {
         "date": "2022.04 - 2023.01",
