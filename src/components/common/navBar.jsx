@@ -15,7 +15,7 @@ export default function NavBar() {
                         {links.map(link => (
                             <li key={link.uri}>
                                 <Link href={link.uri}>
-                                    <div className="relative text-xl md:text-2xl font-normal transition-colors duration-300 py-2 'text-gray-500 hover:text-gray-900 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gray-900 after:transform after:scale-x-0 hover:after:scale-x-75">
+                                    <div className="relative text-xl md:text-2xl font-normal transition-colors duration-300 py-2 'text-gray-500 hover:text-gray-900 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gray-900 after:transform after:scale-x-0 hover:after:scale-x-100">
                                         {link.title}
                                     </div>
                                 </Link>
