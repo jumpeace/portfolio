@@ -20,7 +20,7 @@ export default function Footer({socials}) {
                 </div>
                 {/* 著作権表示 */}
                 <div className="text-sm md:text-base text-gray-400 tracking-wide">
-                    © 2023-25, Jumpei Kawahara
+                    © 2023-2026, Jumpei Kawahara
                 </div>
             </div>
         </footer>

@@ -19,7 +19,6 @@ const skills = {
         { "name": "Firebase (GCP)", "icon": faCloud },
         { "name": "MySQL", "icon": faDatabase },
         { "name": "SQLite", "icon": faDatabase },
-        { "name": "Cloudflare Pages", "icon": faCloud }
     ],
     "AI": [
         { "name": "Reinforcement Learning", "icon": faRobot },

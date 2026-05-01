@@ -17,7 +17,7 @@ const summary = [
         key: 'grade',
         title: 'Grade', 
         icon: faGraduationCap,
-        value: '修士課程 1年',
+        value: '修士課程 2年',
     },
     {
         key: 'laboratory',
@@ -29,7 +29,7 @@ const summary = [
         key: 'volunteer',
         title: 'Volunteer',
         icon: faHandshakeAngle,
-        value: 'IAESTE TLSC\n(元幹部)',
+        value: 'IAESTE 関東地区学生ボランティア',
     },
     {
         key: 'english',
