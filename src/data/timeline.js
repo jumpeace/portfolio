@@ -2,7 +2,7 @@ const timeline = [
     {
         "date": "2026.07 - 08",
         "title": "ドイツにて2ヶ月間のインターン",
-        "description": "IAESTEを使って、ドイツのリハビリ系のITスタートアップでインターンに参加予定です。",
+        "description": "IAESTEを使って、ドイツのリハビリ系のITスタートアップでインターンに参加しています。",
         "links": [
             {
                 "title": "IAESTEインターン", 
