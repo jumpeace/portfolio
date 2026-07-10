@@ -1,4 +1,4 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons"; 
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"; 
 
 const socials = [
     { 
@@ -6,5 +6,10 @@ const socials = [
         "uri": 'https://github.com/jumpeace/', 
         "icon": faGithub 
     },
+    {
+        "name": "LinkedIn",
+        "uri": 'https://www.linkedin.com/in/jun07leaf/',
+        "icon": faLinkedin,
+    }
 ];
 export default socials;
