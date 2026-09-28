@@ -24,6 +24,10 @@ export default function App({ Component, pageProps }) {
                 <meta property="og:title" content="Jumpei Kawahara"></meta>
                 <meta property="og:description" content="Jumpei Kawaharaのホームページです。" />
                 <meta property="og:image" content="https://example.com/images/blog-thumbnail.jpg" />
+                {/* JavaScriptが無効でも本文が読めるようにする */}
+                <noscript>
+                    <style>{`.reveal { opacity: 1 !important; transform: none !important; }`}</style>
+                </noscript>
             </Head>
 
             <div className={display.variable}>
