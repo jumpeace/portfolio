@@ -156,6 +156,20 @@ export default function HomeTemplate({metadata, summary, skills, timeline}) {
                                                         {item.description}
                                                     </p>
                                                 )}
+
+                                                {/* 使用した技術・取り組んだテーマ */}
+                                                {item.tags && (
+                                                    <ul className="flex flex-wrap gap-x-2 gap-y-1.5 mt-3">
+                                                        {item.tags.map((tag, tagIndex) => (
+                                                            <li
+                                                                key={tagIndex}
+                                                                className="border border-gray-200 px-2.5 py-1 text-[0.6rem] md:text-[0.65rem] font-light tracking-[0.1em] text-gray-500"
+                                                            >
+                                                                {tag}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
                                             </div>
                                         </div>
                                     ))}
