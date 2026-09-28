@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // セクション共通の見出し（細字＋広いトラッキング＋ヘアライン）
 function SectionTitle({children}) {
@@ -14,7 +15,7 @@ function SectionTitle({children}) {
 }
 
 // ホームのページ（プロフィール概要、これまでの経歴を表示）
-export default function HomeTemplate({metadata, summary, timeline}) {
+export default function HomeTemplate({metadata, summary, timeline, socials}) {
     return (
         <main className="bg-white text-gray-800 antialiased">
             {/* ヘッダーセクション - 白地に細字のタイポグラフィのみで構成 */}
@@ -34,6 +35,25 @@ export default function HomeTemplate({metadata, summary, timeline}) {
                         <p className="text-[0.7rem] md:text-xs font-light tracking-[0.25em] text-gray-400 mt-4">
                             {metadata.subTitle}
                         </p>
+
+                        {/* ソーシャルメディアへのリンク */}
+                        {socials && (
+                            <div className="flex justify-center md:justify-start gap-x-5 mt-5">
+                                {socials.map((social) => (
+                                    <a
+                                        key={social.name}
+                                        href={social.uri}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={social.name}
+                                        title={social.name}
+                                        className="text-gray-400 hover:text-gray-900 transition-colors duration-300"
+                                    >
+                                        <FontAwesomeIcon icon={social.icon} className="w-5 h-5" />
+                                    </a>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </header>
