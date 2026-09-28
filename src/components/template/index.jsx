@@ -13,8 +13,8 @@ function SectionTitle({children}) {
     );
 }
 
-// ホームのページ（プロフィール概要、スキルを表示）
-export default function HomeTemplate({metadata, summary, skills, timeline}) {
+// ホームのページ（プロフィール概要、これまでの経歴を表示）
+export default function HomeTemplate({metadata, summary, timeline}) {
     return (
         <main className="bg-white text-gray-800 antialiased">
             {/* ヘッダーセクション - 白地に細字のタイポグラフィのみで構成 */}
@@ -60,41 +60,10 @@ export default function HomeTemplate({metadata, summary, skills, timeline}) {
                 </div>
             </section>
 
-            {/* スキルセクション - ジャンル名を左、スキル名を右に並べる */}
-            <section id="skills" className="bg-white py-16 md:py-20">
-                <div className="max-w-3xl mx-auto px-6">
-                    <SectionTitle>SKILLS</SectionTitle>
-                    <div className="border-t border-gray-100">
-                        {Object.entries(skills).map(([genre, genreSkills]) => (
-                            <div key={genre} className="border-b border-gray-100 py-6 md:flex md:gap-8">
-                                <h3 className="shrink-0 md:w-40 text-[0.65rem] md:text-xs font-light tracking-[0.2em] text-gray-400 md:pt-1">
-                                    {genre}
-                                </h3>
-                                <ul className="mt-2.5 md:mt-0 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
-                                    {genreSkills.map((skill, index) => (
-                                        <li
-                                            key={index}
-                                            className="text-sm md:text-[0.95rem] font-normal tracking-[0.05em] text-gray-900 leading-relaxed"
-                                        >
-                                            {skill.name}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* タイムラインセクション - 1本の軸に沿って所属ごとにまとめて表示 */}
             <section id="timeline" className="bg-white py-16 md:py-20">
                 <div className="max-w-3xl mx-auto px-6">
-                    <h2 className="text-center mb-12 md:mb-14">
-                        <span className="block text-2xl md:text-3xl font-light tracking-[0.35em] text-gray-900 indent-[0.35em]">
-                            TIMELINE
-                        </span>
-                        <span aria-hidden="true" className="block w-10 h-px bg-gray-300 mx-auto mt-5"></span>
-                    </h2>
+                    <SectionTitle>TIMELINE</SectionTitle>
 
                     <div className="relative">
                         {/* 全ての所属を貫く1本のタイムライン軸 */}

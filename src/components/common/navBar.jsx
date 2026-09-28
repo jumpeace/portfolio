@@ -4,7 +4,6 @@ export default function NavBar() {
     const links = [
         { uri: '', title: 'HOME'},
         { uri: '#summary', title: 'ABOUT ME'},
-        { uri: '#skills', title: 'SKILLS'},
         { uri: '#timeline', title: 'TIMELINE'},
     ];
 
