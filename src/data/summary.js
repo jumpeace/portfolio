@@ -9,9 +9,9 @@ const summary = [
     },
     {
         key: 'department',
-        title: '専攻', 
+        title: '所属', 
         icon: faBuilding,
-        value: '工学府 知能情報システム工学専攻',
+        value: '工学府 知能情報システム工学所属',
     },
     {
         key: 'grade',

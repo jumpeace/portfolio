@@ -1,5 +1,5 @@
 const metadata = {
-    title: 'Jumpei Kawahara',
+    title: 'JUMPEI KAWAHARA',
     subTitle: 'Web Developer / AI Laboratory',
     icon: {link: 'icon.jpg', alt: 'icon image'},
 };

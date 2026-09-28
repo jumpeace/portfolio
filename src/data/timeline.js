@@ -2,7 +2,7 @@
 const timeline = [
     {
         "org": "東京農工大学大学院",
-        "department": "工学府 知能情報システム工学専攻",
+        "department": "工学府 知能情報システム工学所属",
         "period": "2025.04 - 現在",
         "items": [
             {
