@@ -3,21 +3,22 @@ import Link from "next/link";
 export default function NavBar() {
     const links = [
         { uri: '', title: 'HOME'},
+        { uri: '#summary', title: 'ABOUT ME'},
         { uri: '#skills', title: 'SKILLS'},
         { uri: '#timeline', title: 'TIMELINE'},
     ];
 
     return (
-        <nav className="sticky top-0 z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-md transition-all duration-300">
-            <div className="container mx-auto px-4">
-                <div className="flex justify-center items-center h-16 md:h-20">
-                    <ul className="flex gap-x-12 md:gap-x-16">
+        <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+            <div className="max-w-3xl mx-auto px-6">
+                <div className="flex justify-center items-center h-14 md:h-16">
+                    <ul className="flex gap-x-7 md:gap-x-12">
                         {links.map(link => (
                             <li key={link.uri}>
                                 <Link href={link.uri}>
-                                    <div className="relative text-xl md:text-2xl font-normal transition-colors duration-300 py-2 'text-gray-500 hover:text-gray-900 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gray-900 after:transform after:scale-x-0 hover:after:scale-x-100">
+                                    <span className="block text-[0.65rem] md:text-xs font-light tracking-[0.2em] text-gray-500 hover:text-gray-900 transition-colors duration-300">
                                         {link.title}
-                                    </div>
+                                    </span>
                                 </Link>
                             </li>
                         ))}

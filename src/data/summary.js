@@ -11,7 +11,7 @@ const summary = [
         key: 'department',
         title: 'Department', 
         icon: faBuilding,
-        value: '工学府 知能情報\nシステム工学専攻',
+        value: '工学府 知能情報システム工学専攻',
     },
     {
         key: 'grade',
@@ -26,14 +26,8 @@ const summary = [
         value: '藤田桂英研究室',
     },
     {
-        key: 'volunteer',
-        title: 'Volunteer',
-        icon: faHandshakeAngle,
-        value: 'IAESTE 関東地区学生ボランティア',
-    },
-    {
-        key: 'english',
-        title: 'English',
+        key: 'certifications',
+        title: 'Certifications',
         icon: faEarthEurope,
         value: 'TOEIC L&R 845点',
     },
