@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        /* 和文は端末標準の明朝・ゴシックを使い、欧文のみWebフォントを読み込む */
+        --font-mincho: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'Noto Serif JP', serif;
+        --font-sans: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'YuGothic',
+            'Noto Sans JP', sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: theme('colors.paper');
+        color: theme('colors.ink');
+        font-family: theme('fontFamily.sans');
+        /* 和欧混植で数字と約物が詰まりすぎないようにする */
+        font-feature-settings: 'palt' 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

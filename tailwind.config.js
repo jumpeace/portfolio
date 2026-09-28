@@ -7,10 +7,22 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        // 紙のような温かみのある白と、真っ黒ではない墨色
+        paper: '#FBFBF8',
+        ink: '#1A1A18',
+        // 本文に添える補助テキスト（読みやすさを保つ濃さ）
+        sub: '#4E4E46',
+        // ラベルや日付など、控えめに置く文字
+        muted: '#6E6E65',
+        line: '#DCDAD2',
+      },
+      fontFamily: {
+        // 欧文の見出し用セリフ体（next/fontで読み込む）
+        display: ['var(--font-display)', 'Times New Roman', 'serif'],
+        // 和文の見出し用明朝体
+        mincho: ['var(--font-mincho)'],
+        sans: ['var(--font-sans)'],
       },
     },
   },
