@@ -2,3 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        /* 和文は端末標準の明朝・ゴシックを使い、欧文のみWebフォントを読み込む */
+        --font-mincho: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'Noto Serif JP', serif;
+        --font-sans: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'YuGothic',
+            'Noto Sans JP', sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: theme('colors.paper');
+        color: theme('colors.ink');
+        font-family: theme('fontFamily.sans');
+        /* 和欧混植で数字と約物が詰まりすぎないようにする */
+        font-feature-settings: 'palt' 1;
+    }
+}
+
+@layer components {
+    /* スクロールで入ってきた要素をゆっくり浮かび上がらせる */
+    .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* ポートレートの外周を走る弧（読み込み時に一度だけ描かれる） */
+    .portrait-arc {
+        stroke-dasharray: 62 246;
+        stroke-dashoffset: 62;
+        animation: portrait-arc 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+    }
+}
+
+@keyframes portrait-arc {
+    from {
+        stroke-dashoffset: 62;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* JavaScriptが無効な環境でも本文が読めるようにする */
+.no-js .reveal {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .portrait-arc {
+        animation: none;
+        stroke-dashoffset: 0;
+    }
+}

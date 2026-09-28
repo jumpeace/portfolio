@@ -1,135 +1,236 @@
 import React from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from 'next/link';
 
-// ホームのページ（プロフィール概要、スキルを表示）
-export default function HomeTemplate({metadata, summary, skills, timeline}) {
+import Reveal from '@/components/common/reveal';
+
+// セクションの見出し（欧文ラベル / 和文ラベル / 右へ伸びるヘアライン）
+function SectionTitle({label, japanese}) {
     return (
-        <main className="bg-white text-gray-800 antialiased">
-            {/* ヘッダーセクション - グレーのグラデーションで落ち着いた雰囲気に */}
-            <header className="py-24 md:py-32 bg-gradient-to-br from-gray-900 to-gray-800 text-white flex flex-col items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-pattern-dots opacity-5"></div>
-                <div className="max-w-3xl mx-auto px-6 md:px-4 relative z-10"> {/* px-4をpx-6に変更 */}
-                    {/* タイトルとアイコン */}
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-6 text-center">
-                        {/* アイコン - 影と光沢感を加えてより際立たせる */}
-                        <Image
-                            src={`/${metadata.icon.link}`}
-                            alt={metadata.icon.alt}
-                            width={160}
-                            height={160}
-                            className="rounded-full border-4 border-gray-400 shadow-xl transform transition-transform duration-500"
-                        />
-                        <div className="flex flex-col">
-                            {/* タイトル - フォントをより太く、モダンに */}
-                            <h1 className="text-5xl md:text-6xl font-extrabold tracking-widest text-white uppercase">
-                                {metadata.title}
-                            </h1>
-                            {/* サブタイトル */}
-                            <p className="text-xl md:text-2xl font-light tracking-wider mt-2 text-gray-300">
-                                {metadata.subTitle}
-                            </p>
+        <div className="flex items-baseline gap-4 md:gap-6 mb-10 md:mb-12">
+            <h2 className="font-display text-2xl md:text-3xl font-light tracking-[0.3em] text-ink">
+                {label}
+            </h2>
+            <span className="font-mincho text-[0.7rem] tracking-[0.2em] text-muted">
+                {japanese}
+            </span>
+            <span aria-hidden="true" className="flex-1 h-px bg-line"></span>
+        </div>
+    );
+}
+
+// ホームのページ（プロフィール概要、これまでの経歴を表示）
+export default function HomeTemplate({metadata, summary, timeline, socials}) {
+    return (
+        <main className="bg-paper text-ink antialiased">
+            {/* ヘッダーセクション - 大きなセリフ体の氏名と縦長のポートレート */}
+            <header className="pt-16 pb-14 md:pt-24 md:pb-16">
+                <div className="max-w-3xl mx-auto px-6">
+                    <Reveal>
+                        <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-10 md:gap-12">
+                            <div>
+                                <p className="font-display text-[0.65rem] tracking-[0.35em] text-muted">
+                                    PORTFOLIO
+                                </p>
+
+                                <h1 className="font-display text-5xl md:text-7xl font-light leading-[1.05] tracking-[0.04em] text-ink mt-5">
+                                    {metadata.title.split(' ').map((word) => (
+                                        <span key={word} className="block">{word}</span>
+                                    ))}
+                                </h1>
+
+                                <div className="flex items-center gap-4 mt-6">
+                                    <span aria-hidden="true" className="w-8 h-px bg-line"></span>
+                                    <p className="text-[0.7rem] md:text-[0.8rem] tracking-[0.2em] text-sub">
+                                        {metadata.subTitle}
+                                    </p>
+                                </div>
+
+                                {/* ソーシャルメディアへのリンク */}
+                                {socials && (
+                                    <div className="flex gap-x-5 mt-7">
+                                        {socials.map((social) => (
+                                            <a
+                                                key={social.name}
+                                                href={social.uri}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={social.name}
+                                                title={social.name}
+                                                className="text-sub hover:text-ink transition-colors duration-300"
+                                            >
+                                                <FontAwesomeIcon icon={social.icon} className="w-5 h-5" />
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* ポートレート - 円形に人物を寄せて切り抜き、外側に細いリングと弧を重ねる */}
+                            <div className="relative shrink-0 self-center w-44 h-44 md:w-60 md:h-60">
+                                {/* 外周のリングと、上部に走る墨色の弧 */}
+                                <svg
+                                    aria-hidden="true"
+                                    viewBox="0 0 100 100"
+                                    className="absolute -inset-5 -rotate-[100deg]"
+                                >
+                                    <circle
+                                        cx="50"
+                                        cy="50"
+                                        r="49"
+                                        fill="none"
+                                        stroke="#E4E2DB"
+                                        strokeWidth="0.3"
+                                    />
+                                    <circle
+                                        cx="50"
+                                        cy="50"
+                                        r="49"
+                                        fill="none"
+                                        stroke="#1A1A18"
+                                        strokeWidth="0.3"
+                                        strokeLinecap="round"
+                                        className="portrait-arc"
+                                    />
+                                </svg>
+
+                                {/* 写真 - 人物が円の中心に来るように拡大して配置 */}
+                                <div className="relative w-full h-full overflow-hidden rounded-full">
+                                    <Image
+                                        src={`/${metadata.icon.link}`}
+                                        alt={metadata.icon.alt}
+                                        width={480}
+                                        height={480}
+                                        className="w-full h-full object-cover translate-x-[13%] translate-y-[34%] scale-[2]"
+                                        priority
+                                    />
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </Reveal>
                 </div>
             </header>
 
-            {/* 概要セクション - カードデザインで情報を視覚的に整理 */}
-            <section id="summary" className="bg-white py-20 md:py-28">
-                <div className="max-w-4xl mx-auto px-6 md:px-4"> {/* px-4をpx-6に変更 */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                        {summary.map((summaryItem) => (
-                            <div
+            {/* 概要セクション - ヘアラインで区切った定義リスト */}
+            <section id="summary" className="py-16 md:py-20">
+                <div className="max-w-3xl mx-auto px-6">
+                    <Reveal>
+                        <SectionTitle label="ABOUT ME" japanese="プロフィール" />
+                    </Reveal>
+
+                    <dl className="border-t border-line">
+                        {summary.map((summaryItem, index) => (
+                            <Reveal
                                 key={summaryItem.key}
-                                className="flex flex-col items-center text-center p-8 bg-gray-50 border border-gray-200 rounded-2xl shadow-lg transition-transform duration-300 transform"
+                                delay={index * 60}
+                                className="border-b border-line py-5 md:flex md:gap-8"
                             >
-                                <FontAwesomeIcon
-                                    icon={summaryItem.icon}
-                                    className="w-12 h-12 text-gray-600 mb-4 transition-colors duration-300 hover:text-gray-800"
-                                />
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-800 tracking-wide mb-2">
+                                <dt className="shrink-0 md:w-24 whitespace-nowrap font-mincho text-xs tracking-[0.15em] text-muted md:pt-1">
                                     {summaryItem.title}
-                                </h3>
-                                <p className="text-base md:text-lg text-gray-600 whitespace-pre-wrap">
+                                </dt>
+                                <dd className="text-sm md:text-[0.95rem] tracking-[0.05em] text-ink leading-relaxed mt-1.5 md:mt-0 whitespace-pre-wrap">
                                     {summaryItem.value}
-                                </p>
-                            </div>
+                                </dd>
+                            </Reveal>
                         ))}
-                    </div>
+                    </dl>
                 </div>
             </section>
-            
-            {/* スキルセクション */}
-            <section id="skills" className="bg-gray-100 py-20 md:py-28">
-                <div className="max-w-4xl mx-auto px-6 md:px-4"> {/* px-4をpx-6に変更 */}
-                    <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-800 mb-12">
-                        SKILLS
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        {Object.entries(skills).map(([genre, skills]) => (
-                            <div key={genre} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-                                <h3 className="text-3xl font-bold text-gray-800 mb-6">
-                                    {genre}
-                                </h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
-                                    {skills.map((skill, index) => (
-                                        <div key={index} className="flex items-center space-x-4">
-                                            <FontAwesomeIcon icon={skill.icon} className="w-8 h-8 text-gray-600" />
-                                            <p className="text-lg text-gray-700 font-medium">{skill.name}</p>
-                                        </div>
-                                    ))}
+
+            {/* タイムラインセクション - 1本の軸に沿って所属ごとにまとめて表示 */}
+            <section id="timeline" className="py-16 md:py-20">
+                <div className="max-w-3xl mx-auto px-6">
+                    <Reveal>
+                        <SectionTitle label="TIMELINE" japanese="これまでの歩み" />
+                    </Reveal>
+
+                    <div className="relative">
+                        {/* 全ての所属を貫く1本のタイムライン軸 */}
+                        <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute z-10 top-1 bottom-1 left-3 md:left-4 w-px bg-line"
+                        ></div>
+
+                        {timeline.map((group, groupIndex) => (
+                            <div
+                                key={groupIndex}
+                                className="relative pl-9 md:pl-16 pt-10 first:pt-0 pb-10 last:pb-0"
+                            >
+                                {/* 所属のヘッダー - PC幅ではスクロール中も上部に留める */}
+                                <div className="relative md:sticky md:top-10 md:z-30 bg-paper md:py-2">
+                                    {/* 軸上のマーカーと、見出しへ伸びるヘアライン */}
+                                    <span
+                                        aria-hidden="true"
+                                        className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] md:top-[0.95rem] -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-paper border border-ink"
+                                    ></span>
+                                    <span
+                                        aria-hidden="true"
+                                        className="hidden md:block absolute z-20 -left-11 top-[1.1rem] w-8 h-px bg-line"
+                                    ></span>
+
+                                    <Reveal>
+                                        <p className="font-display text-xs md:text-[0.8rem] tracking-[0.22em] text-muted">
+                                            {group.period}
+                                        </p>
+                                        <h3 className="font-mincho text-lg md:text-xl tracking-[0.1em] text-ink mt-2">
+                                            {group.org}
+                                        </h3>
+                                        {group.department && (
+                                            <p className="text-xs tracking-[0.02em] text-muted mt-1.5">
+                                                {group.department}
+                                            </p>
+                                        )}
+                                    </Reveal>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
+                                {/* 所属内のエピソード */}
+                                <div className="mt-7 space-y-7">
+                                    {group.items.map((item, index) => (
+                                        <Reveal key={index}>
+                                            <div className="relative md:flex md:gap-8 group">
+                                                <span
+                                                    aria-hidden="true"
+                                                    className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] -translate-x-1/2 w-1 h-1 rounded-full bg-muted ring-4 ring-paper transition-colors duration-500 group-hover:bg-ink"
+                                                ></span>
 
-            {/* タイムラインセクション - 視覚的に魅力的なデザイン */}
-            <section id="timeline" className="bg-white py-20 md:py-28">
-                <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-800 mb-12">
-                        TIMELINE
-                    </h2>
-                    <div className="relative border-l-4 border-gray-500 ml-4 md:ml-12">
-                    {timeline.map((item, index) => (
-                        <div key={index} className="mb-8 md:mb-10 pl-8 md:pl-12 relative last:mb-0">
-                            <div className="absolute left-0 top-0 mt-3 -ml-2.5 w-5 h-5 bg-gray-500 rounded-full border-4 border-white"></div>
-                            
-                            <h3 className="text-md md:text-lg font-bold text-gray-900 mb-1">
-                                {item.date}
-                            </h3>
-                            <p className="text-xl md:text-2xl font-medium text-gray-800 mb-2">
-                                {item.title}
-                            </p>
-                            
-                            {item.description && (
-                                <p className="text-sm md:text-base text-gray-600 mb-4">
-                                    {item.description}
-                                </p>
-                            )}
+                                                <p className="shrink-0 md:w-32 whitespace-nowrap font-display text-[0.8rem] tracking-[0.12em] text-muted md:pt-1">
+                                                    {item.date}
+                                                </p>
 
-                            {/* 複数のリンクを追加 */}
-                            {item.links && (
-                                <div className="flex flex-wrap gap-2">
-                                    {item.links.map((link, linkIndex) => (
-                                        <Link key={linkIndex} href={link.uri} target="_blank" rel="noopener noreferrer">
-                                            <div
-                                                className="inline-block px-4 py-2 text-sm md:text-base font-medium text-gray-800 bg-gray-200 rounded-full hover:bg-gray-300 transition-colors duration-300"
-                                            >
-                                                {link.title}
+                                                <div className="mt-1.5 md:mt-0 min-w-0">
+                                                    <p className="font-mincho text-[0.95rem] md:text-base tracking-[0.06em] text-ink leading-relaxed">
+                                                        {item.title}
+                                                    </p>
+
+                                                    {item.description && (
+                                                        <p className="text-[0.8rem] md:text-[0.85rem] text-sub leading-[1.9] mt-2">
+                                                            {item.description}
+                                                        </p>
+                                                    )}
+
+                                                    {/* 使用した技術・取り組んだテーマ */}
+                                                    {item.tags && (
+                                                        <ul className="flex flex-wrap gap-x-2 gap-y-1.5 mt-3">
+                                                            {item.tags.map((tag, tagIndex) => (
+                                                                <li
+                                                                    key={tagIndex}
+                                                                    className="border border-line px-2.5 py-1 text-[0.65rem] md:text-[0.7rem] tracking-[0.1em] text-sub"
+                                                                >
+                                                                    {tag}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    )}
+                                                </div>
                                             </div>
-                                        </Link>
+                                        </Reveal>
                                     ))}
                                 </div>
-                            )}
-                        </div>
-                    ))}
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
         </main>
     );
 }
