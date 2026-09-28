@@ -87,49 +87,85 @@ export default function HomeTemplate({metadata, summary, skills, timeline}) {
             </section>
 
 
-            {/* タイムラインセクション - 視覚的に魅力的なデザイン */}
-            <section id="timeline" className="bg-white py-20 md:py-28">
-                <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-800 mb-12">
-                        TIMELINE
+            {/* タイムラインセクション - 1本の軸に沿って所属ごとにまとめて表示 */}
+            <section id="timeline" className="bg-white py-16 md:py-20">
+                <div className="max-w-3xl mx-auto px-6">
+                    <h2 className="text-center mb-12 md:mb-14">
+                        <span className="block text-2xl md:text-3xl font-light tracking-[0.35em] text-gray-900 indent-[0.35em]">
+                            TIMELINE
+                        </span>
+                        <span aria-hidden="true" className="block w-10 h-px bg-gray-300 mx-auto mt-5"></span>
                     </h2>
-                    <div className="relative border-l-4 border-gray-500 ml-4 md:ml-12">
-                    {timeline.map((item, index) => (
-                        <div key={index} className="mb-8 md:mb-10 pl-8 md:pl-12 relative last:mb-0">
-                            <div className="absolute left-0 top-0 mt-3 -ml-2.5 w-5 h-5 bg-gray-500 rounded-full border-4 border-white"></div>
-                            
-                            <h3 className="text-md md:text-lg font-bold text-gray-900 mb-1">
-                                {item.date}
-                            </h3>
-                            <p className="text-xl md:text-2xl font-medium text-gray-800 mb-2">
-                                {item.title}
-                            </p>
-                            
-                            {item.description && (
-                                <p className="text-sm md:text-base text-gray-600 mb-4">
-                                    {item.description}
-                                </p>
-                            )}
 
-                            {/* 複数のリンクを追加 */}
-                            {item.links && (
-                                <div className="flex flex-wrap gap-2">
-                                    {item.links.map((link, linkIndex) => (
-                                        <Link key={linkIndex} href={link.uri} target="_blank" rel="noopener noreferrer">
-                                            <div
-                                                className="inline-block px-4 py-2 text-sm md:text-base font-medium text-gray-800 bg-gray-200 rounded-full hover:bg-gray-300 transition-colors duration-300"
-                                            >
-                                                {link.title}
+                    <div className="relative">
+                        {/* 全ての所属を貫く1本のタイムライン軸 */}
+                        <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute z-10 top-1 bottom-1 left-3 md:left-4 w-px bg-gray-200"
+                        ></div>
+
+                        {timeline.map((group, groupIndex) => (
+                            <div
+                                key={groupIndex}
+                                className="relative pl-9 md:pl-16 pt-9 first:pt-0 pb-9 last:pb-0"
+                            >
+                                {/* 所属のヘッダー */}
+                                <div className="relative">
+                                    {/* 軸上のマーカーと、見出しへ伸びるヘアライン */}
+                                    <span
+                                        aria-hidden="true"
+                                        className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-white border border-gray-800"
+                                    ></span>
+                                    <span
+                                        aria-hidden="true"
+                                        className="hidden md:block absolute z-20 -left-11 top-[0.6rem] w-8 h-px bg-gray-200"
+                                    ></span>
+
+                                    <p className="text-[0.65rem] md:text-xs font-light tracking-[0.25em] text-gray-400">
+                                        {group.period}
+                                    </p>
+                                    <h3 className="text-lg md:text-xl font-normal tracking-[0.08em] text-gray-900 mt-2">
+                                        {group.org}
+                                    </h3>
+                                    {group.department && (
+                                        <p className="text-xs font-light tracking-[0.02em] text-gray-400 mt-1.5">
+                                            {group.department}
+                                        </p>
+                                    )}
+                                </div>
+
+                                {/* 所属内のエピソード */}
+                                <div className="mt-7 space-y-6">
+                                    {group.items.map((item, index) => (
+                                        <div key={index} className="relative md:flex md:gap-8">
+                                            <span
+                                                aria-hidden="true"
+                                                className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] -translate-x-1/2 w-1 h-1 rounded-full bg-gray-300 ring-4 ring-white"
+                                            ></span>
+
+                                            <p className="shrink-0 md:w-28 text-[0.65rem] md:text-xs font-light tracking-[0.18em] text-gray-400 md:pt-1">
+                                                {item.date}
+                                            </p>
+
+                                            <div className="mt-1.5 md:mt-0 min-w-0">
+                                                <p className="text-sm md:text-[0.95rem] font-normal tracking-[0.05em] text-gray-900 leading-relaxed">
+                                                    {item.title}
+                                                </p>
+
+                                                {item.description && (
+                                                    <p className="text-xs md:text-[0.8rem] font-light text-gray-500 leading-[1.9] mt-2">
+                                                        {item.description}
+                                                    </p>
+                                                )}
                                             </div>
-                                        </Link>
+                                        </div>
                                     ))}
                                 </div>
-                            )}
-                        </div>
-                    ))}
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
         </main>
     );
 }
