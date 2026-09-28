@@ -48,7 +48,7 @@ export default function HomeTemplate({metadata, summary, timeline}) {
                                 key={summaryItem.key}
                                 className="border-b border-gray-100 py-5 md:flex md:gap-8"
                             >
-                                <dt className="shrink-0 md:w-40 text-[0.65rem] md:text-xs font-light tracking-[0.2em] text-gray-400 md:pt-1">
+                                <dt className="shrink-0 md:w-24 whitespace-nowrap text-xs font-light tracking-[0.15em] text-gray-400 md:pt-1">
                                     {summaryItem.title}
                                 </dt>
                                 <dd className="text-sm md:text-[0.95rem] font-normal tracking-[0.05em] text-gray-900 leading-relaxed mt-1.5 md:mt-0 whitespace-pre-wrap">
@@ -111,7 +111,7 @@ export default function HomeTemplate({metadata, summary, timeline}) {
                                                 className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] -translate-x-1/2 w-1 h-1 rounded-full bg-gray-300 ring-4 ring-white"
                                             ></span>
 
-                                            <p className="shrink-0 md:w-28 text-[0.65rem] md:text-xs font-light tracking-[0.18em] text-gray-400 md:pt-1">
+                                            <p className="shrink-0 md:w-32 whitespace-nowrap text-[0.65rem] font-light tracking-[0.1em] text-gray-400 md:pt-1">
                                                 {item.date}
                                             </p>
 

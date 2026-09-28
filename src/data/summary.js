@@ -3,31 +3,31 @@ import { faSchool, faBook, faGraduationCap, faFlaskVial, faHandshakeAngle, faEar
 const summary = [
     {
         key: 'school',
-        title: 'University', 
+        title: '大学', 
         icon: faSchool,
         value: '東京農工大学大学院',
     },
     {
         key: 'department',
-        title: 'Department', 
+        title: '専攻', 
         icon: faBuilding,
         value: '工学府 知能情報システム工学専攻',
     },
     {
         key: 'grade',
-        title: 'Grade', 
+        title: '学年', 
         icon: faGraduationCap,
         value: '修士課程 2年',
     },
     {
         key: 'laboratory',
-        title: 'Laboratory',
+        title: '研究室',
         icon: faFlaskVial,
         value: '藤田桂英研究室',
     },
     {
         key: 'certifications',
-        title: 'Certifications',
+        title: '資格',
         icon: faEarthEurope,
         value: 'TOEIC L&R 845点',
     },
