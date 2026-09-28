@@ -3,7 +3,6 @@ import Head from 'next/head';
 import '@/styles/globals.css'
 
 import Footer from '@/components/common/footer';
-import NavBar from '@/components/common/navBar';
 
 export default function App({ Component, pageProps }) {
     return (
@@ -17,9 +16,6 @@ export default function App({ Component, pageProps }) {
                 <meta property="og:description" content="Jumpei Kawaharaのホームページです。" />
                 <meta property="og:image" content="https://example.com/images/blog-thumbnail.jpg" />
             </Head>
-            {/* ナビゲーションバー */}
-            <NavBar />
-
             <Component {...pageProps} />
             
             {/* フッター */}
