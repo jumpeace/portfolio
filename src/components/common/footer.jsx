@@ -18,7 +18,7 @@ export default function Footer({socials}) {
                 </div>
                 {/* 著作権表示 */}
                 <p className="text-[0.6rem] md:text-[0.65rem] font-light tracking-[0.2em] text-gray-400">
-                    © 2023-2026 JUMPEI KAWAHARA
+                    © 2023-{new Date().getFullYear()} JUMPEI KAWAHARA
                 </p>
             </div>
         </footer>
