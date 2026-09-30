@@ -154,14 +154,19 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                         {timeline.map((group, groupIndex) => (
                             <div
                                 key={groupIndex}
-                                className="relative pl-9 md:pl-16 pt-10 first:pt-0 pb-10 last:pb-0"
+                                className="relative pl-9 md:pl-16 pt-8 md:pt-10 first:pt-0 pb-8 md:pb-10 last:pb-0"
                             >
+                                {/* モバイルでは所属の境目がわかるように区切り線を入れる */}
+                                {groupIndex > 0 && (
+                                    <div aria-hidden="true" className="md:hidden h-px bg-line mb-8"></div>
+                                )}
+
                                 {/* 所属のヘッダー - PC幅ではスクロール中も上部に留める */}
                                 <div className="relative md:sticky md:top-10 md:z-30 bg-paper md:py-2">
                                     {/* 軸上のマーカーと、見出しへ伸びるヘアライン */}
                                     <span
                                         aria-hidden="true"
-                                        className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] md:top-[0.95rem] -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-paper border border-ink"
+                                        className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] md:top-[0.95rem] -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-ink md:bg-paper border border-ink"
                                     ></span>
                                     <span
                                         aria-hidden="true"
