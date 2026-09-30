@@ -170,8 +170,8 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                                     <div aria-hidden="true" className="md:hidden h-px bg-line mb-8"></div>
                                 )}
 
-                                {/* 所属のヘッダー - PC幅ではスクロール中も上部に留める */}
-                                <div className="relative md:sticky md:top-10 md:z-30 bg-paper md:py-2">
+                                {/* 所属のヘッダー */}
+                                <div className="relative md:py-2">
                                     {/* 軸上のマーカーと、見出しへ伸びるヘアライン */}
                                     <span
                                         aria-hidden="true"
