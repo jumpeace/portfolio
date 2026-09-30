@@ -128,7 +128,7 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                                 <dt className="shrink-0 md:w-24 whitespace-nowrap font-mincho text-xs tracking-[0.15em] text-muted md:pt-1">
                                     {summaryItem.title}
                                 </dt>
-                                <dd className="text-sm md:text-[0.95rem] tracking-[0.05em] text-ink leading-relaxed mt-1.5 md:mt-0 whitespace-pre-wrap">
+                                <dd className="font-mincho text-sm md:text-[0.95rem] tracking-[0.06em] text-ink leading-relaxed mt-1.5 md:mt-0 whitespace-pre-wrap">
                                     {summaryItem.value}
                                 </dd>
                             </Reveal>
