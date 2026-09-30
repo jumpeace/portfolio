@@ -19,6 +19,15 @@ function SectionTitle({label, japanese}) {
     );
 }
 
+// 日付表記（「2024.07 - 現在」など）の和文部分だけ明朝体にして、欧文セリフ体と高さ・太さを揃える
+function DateText({children}) {
+    return children.split(/([^\x00-\x7F]+)/).map((part, index) => (
+        index % 2 === 1
+            ? <span key={index} className="font-mincho text-[0.88em] tracking-[0.08em]">{part}</span>
+            : part
+    ));
+}
+
 // ホームのページ（プロフィール概要、これまでの経歴を表示）
 export default function HomeTemplate({metadata, summary, timeline, socials}) {
     return (
@@ -174,8 +183,8 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                                     ></span>
 
                                     <Reveal>
-                                        <p className="font-display text-xs md:text-[0.8rem] tracking-[0.22em] text-muted">
-                                            {group.period}
+                                        <p className="font-display lining-nums text-xs md:text-[0.8rem] tracking-[0.22em] text-muted">
+                                            <DateText>{group.period}</DateText>
                                         </p>
                                         <h3 className="font-mincho text-lg md:text-xl tracking-[0.1em] text-ink mt-2">
                                             {group.org}
@@ -198,8 +207,8 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                                                     className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] -translate-x-1/2 w-1 h-1 rounded-full bg-muted ring-4 ring-paper transition-colors duration-500 group-hover:bg-ink"
                                                 ></span>
 
-                                                <p className="shrink-0 md:w-32 whitespace-nowrap font-display text-[0.8rem] tracking-[0.12em] text-muted md:pt-1">
-                                                    {item.date}
+                                                <p className="shrink-0 md:w-32 whitespace-nowrap font-display lining-nums text-[0.8rem] tracking-[0.12em] text-muted md:pt-1">
+                                                    <DateText>{item.date}</DateText>
                                                 </p>
 
                                                 <div className="mt-1.5 md:mt-0 min-w-0">
