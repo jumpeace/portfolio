@@ -18,6 +18,12 @@ const timeline = [
                 ]
             },
             {
+                "date": "2026.06",
+                "title": "人工知能学会全国大会で発表",
+                "tags": ["モデルベース強化学習", "DreamerV3"],
+                "description": "ロボットと作業員が共存する倉庫におけるロボットの運搬ルートの最適化問題に対して、モデルベース強化学習のDreamerV3を用いた研究を発表しました。",
+            },
+            {
                 "date": "2025.09",
                 "title": "楽天にて5日間のインターン",
                 "tags": ["Next.js"],
@@ -55,12 +61,6 @@ const timeline = [
                         "uri": "https://github.com/jumpeace/anl2025-rivagent"
                     }
                 ]
-            },
-            {
-                "date": "2025.05",
-                "title": "人工知能学会全国大会で発表",
-                "tags": ["モデルベース強化学習", "DreamerV3"],
-                "description": "ロボットと作業員が共存する倉庫におけるロボットの運搬ルートの最適化問題に対して、モデルベース強化学習のDreamerV3を用いた研究を発表しました。",
             },
         ]
     },
