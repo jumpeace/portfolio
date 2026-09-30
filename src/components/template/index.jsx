@@ -19,6 +19,15 @@ function SectionTitle({label, japanese}) {
     );
 }
 
+// 日付表記（「2024.07 - 現在」など）の和文部分だけ明朝体にして、欧文セリフ体と高さ・太さを揃える
+function DateText({children}) {
+    return children.split(/([^\x00-\x7F]+)/).map((part, index) => (
+        index % 2 === 1
+            ? <span key={index} className="font-mincho text-[0.88em] tracking-[0.08em]">{part}</span>
+            : part
+    ));
+}
+
 // ホームのページ（プロフィール概要、これまでの経歴を表示）
 export default function HomeTemplate({metadata, summary, timeline, socials}) {
     return (
@@ -128,7 +137,7 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                                 <dt className="shrink-0 md:w-24 whitespace-nowrap font-mincho text-xs tracking-[0.15em] text-muted md:pt-1">
                                     {summaryItem.title}
                                 </dt>
-                                <dd className="text-sm md:text-[0.95rem] tracking-[0.05em] text-ink leading-relaxed mt-1.5 md:mt-0 whitespace-pre-wrap">
+                                <dd className="font-mincho text-sm md:text-[0.95rem] tracking-[0.06em] text-ink leading-relaxed mt-1.5 md:mt-0 whitespace-pre-wrap">
                                     {summaryItem.value}
                                 </dd>
                             </Reveal>
@@ -154,14 +163,19 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                         {timeline.map((group, groupIndex) => (
                             <div
                                 key={groupIndex}
-                                className="relative pl-9 md:pl-16 pt-10 first:pt-0 pb-10 last:pb-0"
+                                className="relative pl-9 md:pl-16 pt-8 md:pt-10 first:pt-0 pb-8 md:pb-10 last:pb-0"
                             >
+                                {/* モバイルでは所属の境目がわかるように区切り線を入れる */}
+                                {groupIndex > 0 && (
+                                    <div aria-hidden="true" className="md:hidden h-px bg-line mb-8"></div>
+                                )}
+
                                 {/* 所属のヘッダー - PC幅ではスクロール中も上部に留める */}
                                 <div className="relative md:sticky md:top-10 md:z-30 bg-paper md:py-2">
                                     {/* 軸上のマーカーと、見出しへ伸びるヘアライン */}
                                     <span
                                         aria-hidden="true"
-                                        className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] md:top-[0.95rem] -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-paper border border-ink"
+                                        className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] md:top-[0.95rem] -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-ink md:bg-paper border border-ink"
                                     ></span>
                                     <span
                                         aria-hidden="true"
@@ -169,8 +183,8 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                                     ></span>
 
                                     <Reveal>
-                                        <p className="font-display text-xs md:text-[0.8rem] tracking-[0.22em] text-muted">
-                                            {group.period}
+                                        <p className="font-display lining-nums text-xs md:text-[0.8rem] tracking-[0.22em] text-muted">
+                                            <DateText>{group.period}</DateText>
                                         </p>
                                         <h3 className="font-mincho text-lg md:text-xl tracking-[0.1em] text-ink mt-2">
                                             {group.org}
@@ -193,8 +207,8 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                                                     className="absolute z-20 -left-6 md:-left-12 top-[0.45rem] -translate-x-1/2 w-1 h-1 rounded-full bg-muted ring-4 ring-paper transition-colors duration-500 group-hover:bg-ink"
                                                 ></span>
 
-                                                <p className="shrink-0 md:w-32 whitespace-nowrap font-display text-[0.8rem] tracking-[0.12em] text-muted md:pt-1">
-                                                    {item.date}
+                                                <p className="shrink-0 md:w-32 whitespace-nowrap font-display lining-nums text-[0.8rem] tracking-[0.12em] text-muted md:pt-1">
+                                                    <DateText>{item.date}</DateText>
                                                 </p>
 
                                                 <div className="mt-1.5 md:mt-0 min-w-0">
@@ -217,6 +231,24 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                                                                     className="border border-line px-2.5 py-1 text-[0.65rem] md:text-[0.7rem] tracking-[0.1em] text-sub"
                                                                 >
                                                                     {tag}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    )}
+
+                                                    {/* 関連ページへのリンク */}
+                                                    {item.links && (
+                                                        <ul className="flex flex-wrap gap-x-5 gap-y-2 mt-4">
+                                                            {item.links.map((link, linkIndex) => (
+                                                                <li key={linkIndex}>
+                                                                    <a
+                                                                        href={link.uri}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="text-[0.7rem] md:text-[0.75rem] tracking-[0.12em] text-sub underline decoration-line underline-offset-4 hover:text-ink hover:decoration-ink"
+                                                                    >
+                                                                        {link.title}
+                                                                    </a>
                                                                 </li>
                                                             ))}
                                                         </ul>
