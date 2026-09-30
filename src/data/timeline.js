@@ -10,12 +10,6 @@ const timeline = [
                 "title": "ドイツにて2ヶ月間のインターンシップ",
                 "tags": ["Docusaurus", "i18n"],
                 "description": "ドイツのリハビリ系のITスタートアップでインターンに参加しました。ヘルプページの刷新を担当し、26言語に対応したページを開発しました。",
-                "links": [
-                    {
-                        "title": "IAESTEインターン",
-                        "uri": "https://iaeste.org/about"
-                    }
-                ]
             },
             {
                 "date": "2026.06",
@@ -28,39 +22,17 @@ const timeline = [
                 "title": "楽天にて5日間のインターンシップ",
                 "tags": ["Next.js"],
                 "description": "夏の陣 新規プロトタイプ開発コースに参加し、チームでアイデア出しから開発まで実施しました。",
-                "links": [
-                    {
-                        "title": "インターンの詳細",
-                        "uri": "https://corp.rakuten.co.jp/careers/graduates/event/natsunojin/"
-                    }
-                ]
             },
             {
                 "date": "2025.08",
                 "title": "Accentureにて4日間のインターンシップ",
                 "description": "和魂偉才塾 エンジニア塾に参加し、チームで要件定義から開発まで実施しました。",
-                "links": [
-                    {
-                        "title": "インターンの詳細",
-                        "uri": "https://www.accenture.com/jp-ja/careers/local/engineer-internship"
-                    }
-                ]
             },
             {
                 "date": "2025.06",
                 "title": "ANAC2025 ANLリーグに出場",
                 "tags": ["自動交渉"],
                 "description": "複数のシナリオにおける複数エージェントとの自動交渉に対応できる戦略を考案・開発しました。",
-                "links": [
-                    {
-                        "title": "ANACホームページ",
-                        "uri": "http://anac.cs.brown.edu/anac"
-                    },
-                    {
-                        "title": "GitHub",
-                        "uri": "https://github.com/jumpeace/anl2025-rivagent"
-                    }
-                ]
             },
         ]
     },
@@ -83,23 +55,11 @@ const timeline = [
             {
                 "date": "2023.11",
                 "title": "藤田桂英研究室に配属",
-                "links": [
-                    {
-                        "title": "ホームページ",
-                        "uri": "https://katfuji.lab.tuat.ac.jp/"
-                    },
-                ]
             },
             {
                 "date": "2023.05 - 現在",
                 "title": "IAESTE学生ボランティアに所属",
                 "description": "海外インターン生への来日時の生活サポートや、日本文化体験イベント（高尾山登山、川越での文化体験など）の企画・実施しました。また、関東や関西の大学生向けの、IAESTEインターンシップ説明会をリーダーとして企画・運営しました。",
-                "links": [
-                    {
-                        "title": "ホームページ",
-                        "uri": "https://tlsc.iaeste.or.jp/"
-                    },
-                ]
             },
         ]
     },
@@ -113,12 +73,6 @@ const timeline = [
                 "title": "Hack U Kosen 2022にて最優秀賞を受賞",
                 "tags": ["React", "WebSocket"],
                 "description": "4人チームで学生寮の点呼システムを開発しました。リアルタイム顔追跡やIPアドレス認証など、不正防止機能をチームメンバーと共同で設計しました。また、リアルタイム顔追跡のためにWebSocketを用いたリアルタイム通信システムを開発しました。",
-                "links": [
-                    {
-                        "title": "発表会アーカイブ",
-                        "uri": "https://www.youtube.com/watch?v=VIwtxB-X24k&t=3430s"
-                    },
-                ]
             },
             {
                 "date": "2022.04 - 2023.01",
