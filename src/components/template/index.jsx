@@ -235,6 +235,24 @@ export default function HomeTemplate({metadata, summary, timeline, socials}) {
                                                             ))}
                                                         </ul>
                                                     )}
+
+                                                    {/* 関連ページへのリンク */}
+                                                    {item.links && (
+                                                        <ul className="flex flex-wrap gap-x-5 gap-y-2 mt-4">
+                                                            {item.links.map((link, linkIndex) => (
+                                                                <li key={linkIndex}>
+                                                                    <a
+                                                                        href={link.uri}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="text-[0.7rem] md:text-[0.75rem] tracking-[0.12em] text-sub underline decoration-line underline-offset-4 hover:text-ink hover:decoration-ink"
+                                                                    >
+                                                                        {link.title}
+                                                                    </a>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    )}
                                                 </div>
                                             </div>
                                         </Reveal>
